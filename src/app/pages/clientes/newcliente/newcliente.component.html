@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Nuevo Cliente</h2>
+                <form class="form-control-line m-t-20" [formGroup]="form" (ngSubmit)="guardarCambios()" novalidate="novalidate">
+
+                    <div class="form-group" [ngClass]="{'has-danger': !form.get('nombre').valid && form.get('nombre').touched}">
+                        <label class="form-control-label">Apellido y Nombre</label>
+                        <input type="text" class="form-control" formControlName="nombre" [ngClass]="{'form-control-danger': !form.get('nombre').valid  && form.get('nombre').touched}">
+                        <div class="form-control-feedback" *ngIf="!form.get('nombre').valid && form.get('nombre').touched">Ingrese nombre por favor</div>
+                    </div>
+
+                    <div class="form-group" [ngClass]="{'has-danger': !form.get('direccion').valid && form.get('direccion').touched}">
+                        <label class="form-control-label">Dirección</label>
+                        <input type="text" class="form-control" [ngClass]="{'form-control-danger': !form.get('direccion').valid && form.get('direccion').touched}" formControlName="direccion">
+                        <div class="form-control-feedback" *ngIf="!form.get('direccion').valid && form.get('direccion').touched">Ingrese dirección por favor</div>
+                    </div>
+
+                    <div class="form-group" [ngClass]="{'has-danger': !form.get('email').valid && form.get('email').touched}">
+                        <label class="form-control-label">Email</label>
+                        <input type="text" class="form-control" formControlName="email" [ngClass]="{'form-control-danger': !form.get('email').valid && form.get('email').touched}">
+                        <div class="form-control-feedback" *ngIf="!form.get('email').valid && form.get('email').touched">Ingrese un email válido</div>
+                    </div>
+
+                    <div class="form-group" [ngClass]="{'has-danger': !form.get('dni').valid && form.get('dni').touched}">
+                        <label class="form-control-label">Dni</label>
+                        <input type="text" class="form-control" formControlName="dni" [ngClass]="{'form-control-danger': !form.get('dni').valid && form.get('dni').touched}">
+                        <div class="form-control-feedback">Ingrese un DNI válido</div>
+                    </div>
+
+                    <div class="form-group" [ngClass]="{'has-danger': !form.get('distrito').valid && form.get('distrito').touched}">
+                        <label class="form-control-label">Distrito</label>
+                        <input type="text" class="form-control" formControlName="distrito" [ngClass]="{'form-control-danger': !form.get('distrito').valid && form.get('distrito').touched}">
+                        <div class="form-control-feedback" *ngIf="!form.get('distrito').valid && form.get('distrito').touched">Ingrese distrito por favor</div>
+                    </div>
+
+                    <div class="form-group" [ngClass]="{'has-danger': !form.get('telefono').valid && form.get('telefono').touched}">
+                        <label class="form-control-label">Teléfono fijo</label>
+                        <input type="text" class="form-control" formControlName="telefono" [ngClass]="{'form-control-danger': !form.get('telefono').valid && form.get('telefono').touched}">
+                        <div class="form-control-feedback" *ngIf="!form.get('telefono').valid && form.get('telefono').touched">Ingrese un teléfono válido</div>
+                    </div>
+
+                    <div class="form-group" [ngClass]="{'has-danger': !form.get('celular').valid && form.get('celular').touched}">
+                        <label class="form-control-label">Celular</label>
+                        <input type="text" class="form-control" formControlName="celular" [ngClass]="{'form-control-danger': !form.get('celular').valid && form.get('celular').touched}">
+                        <div class="form-control-feedback" *ngIf="!form.get('celular').valid && form.get('celular').touched">Ingrese un celular válido</div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Agregar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="text-right">
+            <a [routerLink]="['/clientes']" class="btn btn-primary">Volver al listado de clientes</a>
+        </div>
+    </div>
+</div>
