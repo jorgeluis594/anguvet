@@ -6,6 +6,11 @@ import { CLIENTES_ROUTES } from './clientes.routes';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NewclienteComponent } from './newcliente/newcliente.component';
 import { ClientesComponent } from './clientes.component';
+import { MostrarclienteComponent } from './mostrarcliente/mostrarcliente.component';
+import { AddpacienteComponent } from './addpaciente/addpaciente.component';
+import { ComponentsModule } from '../../components/components.module';
+
+// Componentes extras
 
 
 
@@ -13,19 +18,18 @@ import { ClientesComponent } from './clientes.component';
   declarations: [
     ClientesComponent,
     AllclientesComponent,
-    NewclienteComponent
+    NewclienteComponent,
+    MostrarclienteComponent,
+    AddpacienteComponent
   ],
   imports: [
-    SharedModule,
-   // CLIENTES_ROUTES,
+    CLIENTES_ROUTES,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    ComponentsModule
   ],
   exports: [
-    ClientesComponent,
-    AllclientesComponent,
-    NewclienteComponent
   ]
 })
 export class ClientesModule { }

@@ -37,7 +37,7 @@ export class NewclienteComponent implements OnInit {
       return;
     }
 
-    let cliente = new Cliente(
+    const cliente = new Cliente(
       this.form.value.nombre,
       this.form.value.dni,
       this.form.value.celular,

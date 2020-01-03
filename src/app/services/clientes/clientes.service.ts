@@ -9,14 +9,26 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClientesService {
 
+  url = URL_SERVICIOS + '/clientes';
+
   constructor(
     public http: HttpClient
   ) { }
 
   crearCliente( cliente: Cliente) {
 
-    let url = URL_SERVICIOS + '/clientes';
-    console.log(cliente);
-    return this.http.post( url, cliente );
+    return this.http.post( this.url, cliente );
+  }
+
+  showCliente( id?: number ) {
+    if (id) {
+      return this.http.get( this.url );
+    } else {
+      console.log('dass');
+    }
+  }
+
+  clientexnombre(nombre: string) {
+    return this.http.get( `${this.url}/nombre/${nombre}`);
   }
 }

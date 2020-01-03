@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Nuevo Paciente</h2>
+                <form class="form-control-line m-t-20" [formGroup]="formpaciente" novalidate="novalidate" (ngSubmit)="pinpin()">
+                    <mat-form-field class="form-group form-full">
+                        <label class="form-control-label">Cliente</label>
+                        <input type="text" matInput formControlName="cliente" [matAutocomplete]="auto" class="form-control">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of opcion" [value]="option">
+                                {{option}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                    <button class="btn btn-block btn-outline-primary">Agregar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

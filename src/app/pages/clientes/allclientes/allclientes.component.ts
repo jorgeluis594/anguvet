@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientesService } from '../../../services/service.index';
+import { Cliente } from '../../../models/cliente.model';
 
 @Component({
   selector: 'app-allclientes',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllclientesComponent implements OnInit {
 
-  constructor() { }
+  clientes: any[];
 
+  constructor( public _clientesServices: ClientesService) {
+  }
   ngOnInit() {
+    this._clientesServices.showCliente(12)
+        .subscribe( (data: any) => {this.clientes = data.clientes;
+        console.log(this.clientes);} );
   }
 
 }
